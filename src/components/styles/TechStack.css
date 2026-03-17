@@ -1,0 +1,86 @@
+#techstack {
+  padding: 100px 60px;
+  overflow: hidden;
+}
+
+.tech-inner {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.tech-header {
+  margin-bottom: 60px;
+}
+
+.ticker-wrap {
+  overflow: hidden;
+  position: relative;
+}
+.ticker-wrap::before,
+.ticker-wrap::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 100px;
+  z-index: 2;
+  pointer-events: none;
+}
+.ticker-wrap::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bg), transparent);
+}
+.ticker-wrap::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bg), transparent);
+}
+
+.ticker {
+  display: flex;
+  width: max-content;
+  animation: tickerForward 28s linear infinite;
+}
+.ticker.reverse {
+  animation: tickerReverse 22s linear infinite;
+}
+.ticker:hover {
+  animation-play-state: paused;
+}
+
+@keyframes tickerForward {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes tickerReverse {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+
+.tech-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border: 1px solid var(--border);
+  margin: 0 6px;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  color: rgba(240, 240, 236, 0.5);
+  white-space: nowrap;
+  transition: border-color 0.2s, color 0.2s;
+}
+.tech-item:hover {
+  border-color: rgba(200, 240, 106, 0.4);
+  color: var(--white);
+}
+
+.tech-dot {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.5;
+  flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+  #techstack { padding: 80px 24px; }
+}

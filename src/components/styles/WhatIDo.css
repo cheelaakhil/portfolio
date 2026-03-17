@@ -1,0 +1,121 @@
+#whatido {
+  padding: 120px 60px;
+  background: var(--bg2);
+}
+
+.whatido-inner {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.whatido-header {
+  margin-bottom: 64px;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+
+.skill-card {
+  background: var(--bg2);
+  padding: 52px 44px;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s;
+  cursor: default;
+}
+.skill-card:hover { background: #161616; }
+
+.skill-card::before {
+  content: attr(data-num);
+  position: absolute;
+  top: 24px; right: 32px;
+  font-family: var(--font-display);
+  font-size: 80px;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.025);
+  line-height: 1;
+  pointer-events: none;
+}
+
+.card-icon {
+  font-size: 26px;
+  margin-bottom: 20px;
+  color: var(--accent);
+}
+
+.card-title {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.card-sub {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 18px;
+  opacity: 0.8;
+}
+
+.card-desc {
+  font-size: 14px;
+  color: rgba(240, 240, 236, 0.5);
+  line-height: 1.85;
+  margin-bottom: 28px;
+}
+
+.card-tools-label {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.tag {
+  font-size: 11px;
+  padding: 4px 12px;
+  border: 1px dashed rgba(255, 255, 255, 0.18);
+  border-radius: 30px;
+  color: rgba(240, 240, 236, 0.45);
+  letter-spacing: 0.5px;
+  transition: border-color 0.2s, color 0.2s;
+}
+.skill-card:hover .tag {
+  border-color: rgba(200, 240, 106, 0.3);
+  color: rgba(240, 240, 236, 0.75);
+}
+
+/* Corner decorations */
+.card-corner {
+  position: absolute;
+  width: 10px; height: 10px;
+  border: 2px solid rgba(255,255,255,0.12);
+  opacity: 0;
+  transition: opacity 0.3s, border-color 0.3s;
+}
+.skill-card:hover .card-corner { opacity: 1; border-color: rgba(200,240,106,0.4); }
+.card-corner.tl { top: 12px; left: 12px; border-right: none; border-bottom: none; }
+.card-corner.tr { top: 12px; right: 12px; border-left: none; border-bottom: none; }
+.card-corner.bl { bottom: 12px; left: 12px; border-right: none; border-top: none; }
+.card-corner.br { bottom: 12px; right: 12px; border-left: none; border-top: none; }
+
+@media (max-width: 900px) {
+  #whatido { padding: 80px 24px; }
+  .cards-grid { grid-template-columns: 1fr; }
+  .skill-card { padding: 40px 28px; }
+}
