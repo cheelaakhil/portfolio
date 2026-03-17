@@ -16,9 +16,9 @@ export const config = {
     { num: '6+', label: 'End-to-end projects' },
   ],
   links: {
-    linkedin: 'https://linkedin.com',
-    github: 'https://github.com',
-    leetcode: 'https://leetcode.com',
+    linkedin: 'https://www.linkedin.com/in/akhil-cheela-8a72a0292/',
+    github: 'https://github.com/cheelaakhil',
+    leetcode: 'https://leetcode.com/u/Akhil_0C/',
   },
   skills: [
     {
